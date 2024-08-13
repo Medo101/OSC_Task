@@ -1,0 +1,12 @@
+mkdir mohamed
+touch one.txt two.txt three.txt four.txt
+mkdir Bad
+touch bad.txt
+mv one.txt /home/m-ramadan/Donwloads
+cp one.txt copy.txt
+cd mohamed
+nano two.txt
+nano three.txt
+mv three.txt hello.txt
+rm four.txt
+rm -r Bad
