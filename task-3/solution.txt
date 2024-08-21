@@ -1,0 +1,35 @@
+mkdir project_files
+cd project_files
+mkdir reports logs data
+cd reports
+touch report1.md report2.md
+cd ..
+cd logs
+touch system.log error.log file1.pdf file2.pdf
+cd data
+touch data.csv info.txt
+cd ..
+nano ./reports/report1.md 
+nano ./logs/system.log 
+nano ./data/data.csv
+cd ~
+tar -cvf logs_backup.tar -C ~/project_files/logs .
+mv logs_backup.tar ~/project_files
+tar -xvf ~/project_files/logs_backup.tar -C ~/project_files/logs
+find ~ -name "*.md" -ls
+find ~/project_files -name "*.log"
+find ~/project_files -name "file1.pdf"
+find ~/project_files -iname "*.pdf"
+find ~/project_files/logs -type f
+ln -s ~/project_files/data/data.csv ~/project_files/link_data.csv
+echo "hhh" > ~/project_files/link_data.csv
+cat ~/project_files/data/data.csv
+unlink ~/project_files/link_data.csv
+touch ~/project_files/summary.txt
+echo "Summary Start" > ~/project_files/summary.txt 
+date >> ~/project_files/summary.txt 
+wc -l ~/project_files/summary.txt | tee -a  ~/project_files/summary.txt
+wc -w ~/project_files/reports/report1.md
+wc -m ~/project_files/logs/system.log | tee -a ~/project_files/summary.txt
+find ~/project_files | wc -l | tee -a ~/project_files/summary.txt
+cat ~/project_files/summary.txt
