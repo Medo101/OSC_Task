@@ -1,0 +1,15 @@
+sudo useradd newuser
+sudo groupadd newgroup
+sudo usermod -aG newgroup newuser
+groups newuser
+mkdir task_dir
+cd task_dir
+touch sample.txt
+chmod 640 sample.txt
+sudo chown newuser:newgroup sample.txt
+sudo groupdel newgroup
+sudo userdel newuser
+sudo pacman -Sy
+sudo pacman -S  lolcat
+echo "I love OSC" | lolcat
+sudo pacman -R lolcat
